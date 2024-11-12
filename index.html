@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="css/DuxChat.css">
+   <link rel="stylesheet" href="css/spinkit.css">
+   <link rel="stylesheet" href="css/sidebar.css">
+   <link rel="stylesheet" href="css/header.css">
+   <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/root.css">
+   <link rel="stylesheet" href="css/fullscreen.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <script src="js/pdftext.js"></script>
+   <script src="js/chatDux.js"></script>
+   <script src="js/pdfSearch.js"></script>
+   <script src="js/toggleFullscreen.js"></script>
+   <script src="js/pauseResume.js"></script>
+   <script src="js/generatorspeak.js"></script>
+   <script src="js/script.js" defer></script>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.2.228/build/pdf.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+   <script src="https://code.responsivevoice.org/responsivevoice.js?key=NVbGYm7d"></script>
+
+</head>
+
+<body>
+
+   <div class="header">
+      <div class="header-logo">
+         <img src="assets/images/air-logo.png" alt="">
+      </div>
+
+      <div class="header-action-bar">
+         <div class="username">
+            Prof Dux
+         </div>
+         <div class="user-image">
+            <img src="images/DuxProSilent.gif" alt="">
+         </div>
+         <div class="logout-button" onclick="logoutDialog()">
+            <img class='icon' src="assets/icons/fi/fi-rr-arrow-right-to-bracket.svg" alt="" class="regular-icon">
+         </div>
+      </div>
+   </div>
+
+   <div class="width-container">
+      <div class="sidebar">
+         <h2 class="medium-title">Teacher Panel</h2>
+
+         <div class="two-column-grid">
+            <a class="ad-link" target="_blank" href="https://www.bing.com/create">
+               <img src="assets/icons/fi/fi-rr-square-star.svg">
+               <p>AI Image Creator</p>
+            </a>
+
+            <a class="ad-link bg-blue" target="_blank"
+               href="https://www.bing.com/search?toWww=1&redig=0F5576DEB42544F78DFCAACCBF98A1CD&q=Bing+AI&showconv=1">
+               <img src="assets/icons/fi/fi-rr-message-quote.svg">
+               <p>AI Chat</p>
+            </a>
+         </div>
+
+         <div class="sidebar-menu">
+            <a class="sidebar-link" data-id="Dashboard" href="index.php">
+               <img src="assets/icons/fi/fi-rr-border-all.svg" alt="">
+               <p>Dashboard</p>
+            </a>
+
+            <a class="sidebar-link" data-id="Course Management" href="CourseManagement.php">
+               <img src="assets/icons/fi/fi-rr-apps-add.svg" alt="">
+               <p>Course Management</p>
+            </a>
+
+            <a class="sidebar-link" data-id="Exam" href="Exam.php">
+               <img src="assets/icons/fi/fi-rr-pen-circle.svg" alt="">
+               <p>Exam</p>
+            </a>
+
+            <a class="sidebar-link" data-id="Scheduling" href="Scheduling.php">
+               <img src="assets/icons/fi/fi-rr-time-fast.svg" alt="">
+               <p>Scheduling</p>
+            </a>
+
+            <a class="sidebar-link" data-id="Weight Assignment" href="Weights.php">
+               <img src="assets/icons/fi/fi-rr-chart-pie-alt.svg" alt="">
+               <p>Weight Assignment</p>
+            </a>
+
+            <a class="sidebar-link" data-id="Class Stats" href="Stats.php">
+               <img src="assets/icons/fi/fi-rr-chart-line-up.svg" alt="">
+               <p>Class Grades</p>
+            </a>
+
+            <a class="sidebar-link" data-id="Settings" href="Settings.php">
+               <img src="assets/icons/fi/fi-rr-settings.svg" alt="">
+               <p>Settings</p>
+            </a>
+
+            <a class="sidebar-link" data-id="Messaging" href="Messaging.php">
+               <img src="assets/icons/fi/fi-rr-mailbox.svg" alt="">
+               <p>Messaging</p>
+            </a>
+         </div>
+
+         <div class="gtranslate_wrapper"></div>
+         <script>window.gtranslateSettings = { "default_language": "en", "languages": ["en", "tr", "fr", "de", "it", "es"], "wrapper_selector": ".gtranslate_wrapper", "switcher_horizontal_position": "left", "switcher_vertical_position": "bottom", "float_switcher_open_direction": "bottom", "flag_style": "3d" }</script>
+         <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+      </div>
+
+      <div></div>
+
+      <div class="background-wrapper">
+         <div class="instructions-container">
+            <h3>Welcome to Dux Presentation Generator!</h3>
+            <p>Follow these simple steps to create your presentation:</p>
+            <ol class="instructions-list">
+               <li><span class="step-number">1</span>Upload your PDF document.</li>
+               <li><span class="step-number">2</span>Wait for the document to process.</li>
+               <li><span class="step-number">3</span>Review and customize your presentation.</li>
+               <li><span class="step-number">4</span>Click on Start to start the presentation.</li>
+            </ol>
+         </div>
+
+         <div class="file-upload-wrapper" style="height:12%;">
+            <i class="fa fa-cloud-upload-alt file-upload-icon"></i>
+            <span>Upload your PDF here</span>
+            <input type="file" class="file-upload-input" id="file-pdf" onchange="uploadPDF(this)" accept=".pdf">
+         </div>
+
+         <div class="progress-bar-container" id="progress-bar-container" style="display: none;">
+            <div id="progress-bar" class="progress-bar"></div>
+         </div>
+
+         <h2 style="display:none;">PDF Content</h2>
+         <textarea id="pdf-content" style="width: 100%; height: 200px;display:none;"></textarea>
+         <br />
+         <br />
+         <h2 style="display:none;">Page Image</h2>
+         <canvas id="canvas" style="display:none;"></canvas>
+      </div>
+   </div>
+
+   <div class="overlay main-presentation-overlay">
+      <div id="customPopup" class="custom-popup">
+         <div class="left-pane">
+            <div class="button-section">
+               <button id="pause">Pause</button>
+               <button id="play">Play</button>
+               <button id="resume">Resume</button>
+            </div>
+
+            <div class="content-wrapper">
+               <canvas id="pdf-review-canvas"></canvas>
+            </div>
+
+         </div>
+
+         <div class="right-pane">
+            <div class="buttons-list">
+               <button id="closebutton" class="close relative-close-button"
+                  onclick="hide('.main-presentation-overlay'); stopDuxFromTalking()" aria-label="Close">x</button>
+               <button onclick="toggleFullScreen()" class="fullscreen-button">
+                  <img src="images/fullscreen.png" style="width:100%;">
+               </button>
+            </div>
+
+            <div class="inner-pane">
+               <div id="Speakshow"></div>
+               <div class="chat-box"></div>
+            </div>
+
+            <div class="biased-left-grid">
+               <div class="class-message-typing-input">
+                  <div contenteditable="true" id="final_speech" class="final-speech"></div>
+                  <button id="voiceButton">
+                     <img src="assets/icons/mic.gif" alt="Talk to Dux">
+                  </button>
+               </div>
+
+               <button class="button" id="sendMessage" style="">Ask Dux</button>
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+
+   <div class="overlay start-presentation-overlay">
+      <div class="custom-upload-popup">
+         <div class="custom-upload-header">
+            <div class="custom-upload-title">Presentation</div>
+            <div class="custom-close" onclick="hide('.start-presentation-overlay'); clear('#pdf-review-canvas')">
+               <img src="assets/icons/close.png" alt="">
+            </div>
+         </div>
+         <div class="custom-upload-body">
+            <div class="pdf-review">
+               <canvas id="pdf-review-canvas"></canvas>
+            </div>
+            <div class="custom-button" onclick="startPresentation()">Start Presentation</div>
+         </div>
+      </div>
+   </div>
+
+
+</body>
+
+</html>

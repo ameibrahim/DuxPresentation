@@ -1,0 +1,50 @@
+.fullscreen-button {
+  position: absolute;
+  top: 15px;
+  right: 36px; /* Adjust positioning as needed */
+  z-index: 1000;
+  width: 27px; /* Match the size of the close button */
+  height: 27px;
+  background-color: white !important; 
+  border: none; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+
+  /* background-image: url("https://cdn-icons-png.flaticon.com/512/122/122669.png"); */
+}
+
+
+
+
+.fullscreen-button:hover{
+
+  transform:scale(0.87);
+  transition: transform 0.2s ease-in-out;
+}
+
+.fullscreen-button::before {
+
+}
+
+.fullscreen-button::after {
+
+}
+
+.fullscreen-button::after {
+  width: 2px;
+  height: 10px;
+  top: 2px;
+  left: 2px;
+}
+
+.custom-popup:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Optional: Remove any overflow or scaling properties */
+    overflow: hidden;
+  }

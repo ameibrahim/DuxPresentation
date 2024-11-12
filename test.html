@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/generatorspeak.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=NVbGYm7d"></script>
+
+</head>
+
+<body>
+
+    <button class="speak-button">Speak</button>
+    <button class="pause-button">Pause</button>
+    <button class="resume-button">resume</button>
+
+    <script>
+
+        const generator = new SpeechGenerator();
+        generator.addSentence("Hello, how are you?");
+        generator.addSentence("This is a JavaScript sentence generator.");
+        generator.addSentence("It can play, pause, and resume sentences in sequence.");
+
+        generator.addPlayButton(document.querySelector(".speak-button"))
+        generator.addPauseButton(document.querySelector(".pause-button"))
+        generator.addResumeButton(document.querySelector(".resume-button"))
+
+    </script>
+
+</body>
+
+</html>
